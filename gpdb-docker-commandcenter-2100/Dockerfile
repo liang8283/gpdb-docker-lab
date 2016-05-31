@@ -16,10 +16,10 @@ RUN     yum -y install crontabs \
  	&& chmod +x /usr/local/bin/gpcc.sh  \
         && mv /tmp/run.sh /usr/local/bin/run.sh \
         && chmod +x /usr/local/bin/run.sh \
-        && unzip /tmp/greenplum-cc-web-2.1.0-build-36-RHEL5-x86_64.zip -d /tmp/ \
-        && rm /tmp/greenplum-cc-web-2.1.0-build-36-RHEL5-x86_64.zip \
-        && echo -e "yes\n\nyes\nyes\n" | /tmp/greenplum-cc-web-2.1.0-build-36-RHEL5-x86_64.bin \
-	&& rm /tmp/greenplum-cc-web-2.1.0-build-36-RHEL5-x86_64.bin \
+        && unzip /tmp/greenplum-cc-web*.zip -d /tmp/ \
+        && rm /tmp/greenplum-cc-web*.zip \
+        && echo -e "yes\n\nyes\nyes\n" | /tmp/greenplum-cc-web*.bin \
+	&& rm /tmp/greenplum-cc-web*.bin \
         && mv /tmp/bash_profile /home/gpadmin/.bash_profile \
         && su gpadmin -l -c "/usr/local/bin/gpcc.sh"
 
