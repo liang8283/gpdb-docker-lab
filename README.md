@@ -11,7 +11,7 @@ Docker lab for setting up GPDB testing env
    2) gpdb_ccb
 
    ```
-	./gpdb-docker.sh \<port\> \<image\>
+	./gpdb-docker.sh <port> <image>
    ```
 
    For example:
@@ -23,6 +23,6 @@ Docker lab for setting up GPDB testing env
 3. Access the gpdb env on local Mac.
 
    ```
-   ssh gpadmin@\`docker-machine ip\` -p \<port specified in step 2\>
+   ssh gpadmin@`docker-machine ip` -p <port specified in step 2>
    ```
 
