@@ -7,16 +7,22 @@ Docker lab for setting up GPDB testing env
    
    Images available at the moment:
 
-   1) gpdb_4382
-
+   1) gpdb_4382  
    2) gpdb_ccb
-   
-   ./gpdb-docker.sh \<port\> \<image\>
+
+   ```
+	./gpdb-docker.sh \<port\> \<image\>
+   ```
 
    For example:
-   ./gpdb-docker.sh 4382 gpdb_4382
+
+   ```
+    ./gpdb-docker.sh 4382 gpdb_4382
+   ```
 
 3. Access the gpdb env on local Mac.
 
+   ```
    ssh gpadmin@\`docker-machine ip\` -p \<port specified in step 2\>
+   ```
 
