@@ -33,7 +33,7 @@ fi
 docker_machine_state=`docker-machine ls | awk '{print $4}' | sed 1d`
 
 if [ $docker_machine_state = "Stopped" ]; then
-    docker-machine start
+    docker-machine start default
 fi
 
 ## Set the env variables to run Docker commands.
@@ -44,7 +44,7 @@ container_num=`docker ps -a | awk '{print $1}' | sed 1d | wc -l`
 
 if [ $container_num -eq 0 ]; then
     docker-machine ssh default "sudo sed -i 's/^.*label.*/--label provider=virtualbox --insecure-registry 10.152.9.39:5000/g' /var/lib/boot2docker/profile"
-    docker-machine restart
+    docker-machine restart default
 fi
 
 ## If the image does not exist on local Mac, pull it from registry and run it. Otherwise, just restart the existing container.
